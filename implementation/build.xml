@@ -1,0 +1,10 @@
+<project name="ResultsComparison" default="compile">
+  <property name="sourcedir" value="${basedir}"/>
+  <property name="targetdir" value="${basedir}"/>
+  <property name="librarydir" value="${basedir}"/>
+ 
+  <target name="compile">
+    <javac srcdir="${sourcedir}"
+           destdir="${targetdir}"/>
+  </target>
+</project>

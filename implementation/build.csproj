@@ -1,0 +1,18 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<AssemblyName>ResultsComparison</AssemblyName>
+		<OutputPath></OutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="Program.cs"/>
+		<Compile Include="FileHandler.cs"/>
+		<Compile Include="DataSet.cs"/>
+		<Compile Include="Vector.cs"/>
+		<Compile Include="DataCalculator.cs"/>
+	</ItemGroup>
+	<Target Name="Build">
+		<MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+    <Csc Sources="@(Compile)" OutputAssembly="$(OutputPath)$(AssemblyName).exe" />
+	</Target>
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+</Project>
